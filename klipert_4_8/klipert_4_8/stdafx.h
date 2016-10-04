@@ -24,6 +24,7 @@ public:
 	char* getAdviser();
 	unsigned int getDia();
 	unsigned int getClockRate();
-	int operator == (pses & c);
-	pses operator = (pses & c);
+	int operator == (pses&c);
+	pses operator = (pses&c);
+	friend pses operator + (const pses&, const pses&);
 };

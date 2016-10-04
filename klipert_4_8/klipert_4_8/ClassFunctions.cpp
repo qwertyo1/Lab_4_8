@@ -51,3 +51,16 @@ pses pses::operator = (pses&c) {
 	strcpy(adviser, c.adviser);
 	return c;
 }
+
+
+pses operator + (const pses&a, const pses&b) {
+	pses t;
+	t.year = a.year + b.year;
+	t.dia = a.dia + b.dia;
+	t.clockRate = a.clockRate + b.clockRate;
+	delete[] t.adviser;
+	t.adviser = new char[strlen(a.adviser) + strlen(b.adviser) + 1];
+	strcpy(t.adviser, a.adviser);
+	strcat(t.adviser, a.adviser);
+	return t;
+}

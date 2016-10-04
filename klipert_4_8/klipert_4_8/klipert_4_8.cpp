@@ -45,14 +45,20 @@ int main()
 
 
 	cout << endl << "Демонастрация работы перегрузки операции присваивания: " << endl << "  Создадим копию объекта под номером " << s << " и поместим её в объект varToCopy" << endl;
-	pses *varToCopy = new pses;
-	varToCopy[0] = projects[s];
+	pses varToCopy;
+	varToCopy = projects[s];
 	cout << " |  Год  |  Научный руководитель  |  Диаметр антенны (м)  |  Рабочая частота (МГц)  | " << endl;
 	for (int i = 0; i < n; i++) {
 		projects[i].showData();
 	}
 	cout << endl << " |  Год  |  Научный руководитель  |  Диаметр антенны (м)  |  Рабочая частота (МГц)  | " << endl;
-	varToCopy[0].showData();
+	varToCopy.showData();
+
+	cout << endl << "Демонастрация работы перегрузки операции сложения: " << endl << "  Сложим " << f << " и " << s << " объекты, а результаты положим в объект varToSum." << endl;
+	pses varToSum;
+	varToSum = projects[f] + projects[s];
+	cout << endl << " |  Год  |  Научный руководитель  |  Диаметр антенны (м)  |  Рабочая частота (МГц)  | " << endl;
+	varToSum.showData();
 
 	system("pause");
 	delete[]projects;
