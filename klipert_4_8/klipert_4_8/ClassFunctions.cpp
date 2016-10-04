@@ -32,7 +32,7 @@ unsigned int pses::getClockRate()
 	return clockRate;
 }
 
-int pses::operator == (pses & c) {
+int pses::operator == (pses&c) {
 	if ((year != c.year) ||
 		(dia != c.dia) ||
 		(strcmp(adviser, c.adviser) != 0) ||
@@ -42,12 +42,12 @@ int pses::operator == (pses & c) {
 		return 1;//истина
 }
 
-pses pses::operator = (pses & c) {
-	c.year = year;
-	c.dia = dia;
-	c.clockRate = clockRate;
-	delete[] c.adviser; 
-	c.adviser = new char[strlen(adviser) + 1];
-	strcpy(c.adviser, adviser);
+pses pses::operator = (pses&c) {
+	year = c.year;
+	dia = c.dia;
+	clockRate = c.clockRate;
+	delete[] adviser; 
+	adviser = new char[strlen(c.adviser) + 1];
+	strcpy(adviser, c.adviser);
 	return c;
 }

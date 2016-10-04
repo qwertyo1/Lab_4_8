@@ -30,8 +30,9 @@ int main()
 		projects[i].showData();
 	}
 
+	cout << endl << "Демонастрация работы перегрузки операции ==: " << endl;
 	int f, s = 0;
-	cout << endl << "Укажите номера строк для сравнения " << endl << "  Номер первой строки: ";
+	cout << "  Укажите номера строк для сравнения " << endl << "  Номер первой строки: ";
 	cin >> f;
 	cout << "  Номер второй строки: ";
 	cin >> s;
@@ -41,8 +42,18 @@ int main()
 	else {
 		cout << "  Данные строки не равны" << endl;
 	}
-	projects[s] = projects[n];
-	projects[n].showData();
+
+
+	cout << endl << "Демонастрация работы перегрузки операции присваивания: " << endl << "  Создадим копию объекта под номером " << s << " и поместим её в объект varToCopy" << endl;
+	pses *varToCopy = new pses;
+	varToCopy[0] = projects[s];
+	cout << " |  Год  |  Научный руководитель  |  Диаметр антенны (м)  |  Рабочая частота (МГц)  | " << endl;
+	for (int i = 0; i < n; i++) {
+		projects[i].showData();
+	}
+	cout << endl << " |  Год  |  Научный руководитель  |  Диаметр антенны (м)  |  Рабочая частота (МГц)  | " << endl;
+	varToCopy[0].showData();
+
 	system("pause");
 	delete[]projects;
 	return 0;
